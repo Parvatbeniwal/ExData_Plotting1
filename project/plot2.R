@@ -11,10 +11,8 @@ rm(ig)
 hello_ig <- paste(as.Date(meow$Date), meow$Time)
 meow$Datetime <- as.POSIXct(hello_ig)
 
-## Plot 1
-hist(meow$Global_active_power, main="Global Active Power", 
-     xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
-
-## Saving to file
-dev.copy(png, file="./exp-data/ExData_Plotting1/project/plot1.png", height=480, width=480)
+## Plot 2
+plot(meow$Global_active_power~meow$Datetime, type="l",
+     ylab="Global Active Power (kilowatts)", xlab="")
+dev.copy(png, file="./exp-data/ExData_Plotting1/project/plot2.png", height=480, width=480)
 dev.off()
